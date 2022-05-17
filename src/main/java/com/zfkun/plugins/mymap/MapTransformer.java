@@ -27,6 +27,7 @@ public class MapTransformer implements MyTransformer {
     }
 
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
+        System.out.println("Fuck");
         PutFilter.setRules(this.rules);
 
         ClassReader reader = new ClassReader(classBytes);
