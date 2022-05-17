@@ -31,4 +31,8 @@ public class PutFilter {
         }
         return map.getOrDefault(k, v);
     }
+
+    public static Object testSetOK(Object k) {
+        return "luogf";
+    }
 }

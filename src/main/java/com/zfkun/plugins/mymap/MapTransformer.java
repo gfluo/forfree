@@ -23,6 +23,34 @@ public class MapTransformer implements MyTransformer {
     }
 
     public String getHookClassName() {
+        return "com/jetbrains/ls/data/LicenseData";
+    }
+
+    public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
+        PutFilter.setRules(this.rules);
+
+        ClassReader reader = new ClassReader(classBytes);
+        ClassNode node = new ClassNode(ASM5);
+        reader.accept(node, 0);
+
+        for (MethodNode methodNode : node.methods) {
+            if (methodNode.name.equals("setLicenseeName")) {
+                InsnList list = new InsnList();
+                list.add(new VarInsnNode(ALOAD, 1));
+                list.add(new MethodInsnNode(INVOKESTATIC, "com/zfkun/plugins/mymap/PutFilter", "testSetOK", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", false));
+                list.add(new VarInsnNode(ASTORE, 1));
+                methodNode.instructions.insert(list);
+            }
+        }
+
+        ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_FRAMES | ClassWriter.COMPUTE_MAXS);
+        node.accept(writer);
+
+        return writer.toByteArray();
+    }
+
+    /*
+    public String getHookClassName() {
         return "com/google/gson/internal/LinkedTreeMap";
     }
 
@@ -49,4 +77,5 @@ public class MapTransformer implements MyTransformer {
 
         return writer.toByteArray();
     }
+     */
 }
