@@ -4,3 +4,4 @@
 target/
 publish/
 .mvn/wrapper/maven-wrapper.jar
+pom.xml
