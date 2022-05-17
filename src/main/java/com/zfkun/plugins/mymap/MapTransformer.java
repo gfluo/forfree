@@ -22,7 +22,6 @@ public class MapTransformer implements MyTransformer {
         this.rules = rules;
     }
 
-    /*
     public String getHookClassName() {
         return "com/jetbrains/ls/data/LicenseData";
     }
@@ -50,14 +49,13 @@ public class MapTransformer implements MyTransformer {
 
         return writer.toByteArray();
     }
-    */
 
+    /*
     public String getHookClassName() {
         return "com/google/gson/internal/LinkedTreeMap";
     }
 
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
-        System.out.println("Fuck");
         PutFilter.setRules(this.rules);
 
         ClassReader reader = new ClassReader(classBytes);
@@ -80,4 +78,5 @@ public class MapTransformer implements MyTransformer {
 
         return writer.toByteArray();
     }
+     */
 }
