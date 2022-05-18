@@ -23,11 +23,11 @@ public class MapTransformer implements MyTransformer {
     }
 
     public String getHookClassName() {
-        return "com/jetbrains/ls/requests/ValidateKeyRequest";
+        return "com/jetbrains/ls/data/LicenseData";
     }
 
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
-        System.out.println("Fuck");
+        System.out.println("Fuck+++++++++++++++++++++++++++++++");
         PutFilter.setRules(this.rules);
 
         ClassReader reader = new ClassReader(classBytes);
