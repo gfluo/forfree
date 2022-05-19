@@ -23,7 +23,7 @@ public class MapTransformer implements MyTransformer {
     }
 
     public String getHookClassName() {
-        return "com/jetbrains/ls/responses/License";
+        return "com/jetbrains/ls/responses/LicenseOld";
     }
 
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
