@@ -35,6 +35,7 @@ public class MapTransformer implements MyTransformer {
         reader.accept(node, 0);
 
         for (MethodNode methodNode : node.methods) {
+            System.out.println(methodNode.name);
             if (methodNode.name.equals("setLicenseeName")) {
                 InsnList list = new InsnList();
                 list.add(new VarInsnNode(ALOAD, 1));
