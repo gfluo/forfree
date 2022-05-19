@@ -23,7 +23,7 @@ public class MapTransformer implements MyTransformer {
     }
 
     public String getHookClassName() {
-        return "com/intellij/idea/Launcher";
+        return "com/intellij/idea/StartupUtil";
     }
 
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
