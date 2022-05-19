@@ -23,7 +23,7 @@ public class MapTransformer implements MyTransformer {
     }
 
     public String getHookClassName() {
-        return "com/intellij/util/AskForLicenseAction";
+        return "com/jetbrains/ls/requests/ValidateLicenseRequest";
     }
 
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
