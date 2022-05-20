@@ -34,8 +34,8 @@ public class PutFilter {
     }
 
     public static Object testSetOK(Object k, Object v) {
-        System.out.println(k);
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println(v.toString());
-        return "luogf";
+        return "luogf + _____________________________________________________________";
     }
 }
