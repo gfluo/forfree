@@ -22,7 +22,7 @@ public class MapTransformer implements MyTransformer {
         this.rules = rules;
     }
     public String getHookClassName() {
-        return "com/jetbrains/ls/responses/ObtainLicenseResponse";
+        return "com/jetbrains/ls/responses/EncodedAsset";
     }
 
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
