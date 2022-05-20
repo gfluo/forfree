@@ -34,8 +34,8 @@ public class ResultFilter {
     }
 
     public static BigInteger testFilter(BigInteger x, BigInteger y, BigInteger z) {
-        System.out.println("________________________________________________+++++++++++++++++++++++++++++");
         if (l1cached.contains(x.intValue() + "," + y.intValue() + "," + z.intValue())) {
+            System.out.println("match. ++++++++++++++++++++++++++");
             return l2cached.getOrDefault(x + "," + y + "," + z, null);
         }
 
