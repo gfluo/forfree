@@ -25,9 +25,9 @@ public class PutFilter {
     }
 
     public static Object testPut(Object k, Object v) {
-        System.out.println(k);
         if (k == null) return v;
         if (k.equals("licenseeName")) {
+            System.out.println(k + "-------------------------------------------------------------");
             return "your free";
         }
         return map.getOrDefault(k, v);
