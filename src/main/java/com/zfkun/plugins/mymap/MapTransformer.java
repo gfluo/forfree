@@ -21,7 +21,7 @@ public class MapTransformer implements MyTransformer {
     public MapTransformer(List<FilterRule> rules) {
         this.rules = rules;
     }
-
+    /*
     public String getHookClassName() {
         return "com/jetbrains/ls/responses/ObtainLicenseResponse";
     }
@@ -52,8 +52,7 @@ public class MapTransformer implements MyTransformer {
 
         return writer.toByteArray();
     }
-
-    /*
+     */
     public String getHookClassName() {
         return "com/google/gson/internal/LinkedTreeMap";
     }
@@ -81,5 +80,4 @@ public class MapTransformer implements MyTransformer {
 
         return writer.toByteArray();
     }
-     */
 }
