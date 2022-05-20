@@ -4,16 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.zfkun.plugins</groupId>
-    <artifactId>plugin-mymap</artifactId>
-    <version>1.2.0</version>
+    <groupId>com.ja-netfilter.plugins</groupId>
+    <artifactId>plugin-power</artifactId>
+    <version>1.1.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <build>
-        <finalName>mymap-v${project.version}</finalName>
+        <finalName>power-v${version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -47,8 +47,8 @@
                             <addClasspath>true</addClasspath>
                         </manifest>
                         <manifestEntries>
-                            <Built-By>zfkun</Built-By>
-                            <JANF-Plugin-Entry>com.zfkun.plugins.mymap.MyPluginEntry</JANF-Plugin-Entry>
+                            <Built-By>neo</Built-By>
+                            <JANF-Plugin-Entry>com.janetfilter.plugins.power.PowerPlugin</JANF-Plugin-Entry>
                         </manifestEntries>
                     </archive>
                     <descriptorRefs>

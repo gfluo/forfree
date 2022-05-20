@@ -1,22 +1,17 @@
-# plugin-mymap
+# plugin-power
 
-### A plugin for the [ja-netfilter](https://github.com/ja-netfilter/ja-netfilter), it can replace strings dynamically.
+### A plugin for the [ja-netfilter](https://github.com/ja-netfilter/ja-netfilter), it is a dragon slayer for asymmetric encryption.
 
-#### Use the `mvn clean package` command to compile and use `mymap-vX.X.X-jar-with-dependencies.jar` file!
+#### Use the `mvn clean package` command to compile and use `power-vX.X.X-jar-with-dependencies.jar` file!
 
-> if you use `ja-netfilter v1.2.0`, you need `mymap-v1.0.1-jar-with-dependencies.jar` fallback  
-
-## Notice
-
-This is just a version for myself use
-
-This project base on decompiling from **jetbra.in**, thanks ~
-
-## Config file: `mymap.conf`
+## Config file: `power.conf`
 
 ```
-[MyMap]
-EQUAL,licenseeName->xxxxxxx
-EQUAL,gracePeriodDays->100000
-EQUAL,paidUpTo->5000-12-31
+; for replace arguments
+[Args]
+EQUAL,y,z->fakeY,fakeZ
+
+; for replace result
+[Result]
+EQUAL,x,y,z->fakeResult
 ```
