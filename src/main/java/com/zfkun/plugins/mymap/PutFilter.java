@@ -32,7 +32,9 @@ public class PutFilter {
         return map.getOrDefault(k, v);
     }
 
-    public static Object testSetOK(Object k) {
+    public static Object testSetOK(Object k, Object v) {
+        System.out.println(k);
+        System.out.println(v.toString());
         return "luogf";
     }
 }

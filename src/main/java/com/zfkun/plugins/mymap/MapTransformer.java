@@ -36,11 +36,13 @@ public class MapTransformer implements MyTransformer {
 
         for (MethodNode methodNode : node.methods) {
             System.out.println(methodNode.name);
-            if (methodNode.name.equals("setLicenseeName")) {
+            if (methodNode.name.equals("getPropertyValueString")) {
                 InsnList list = new InsnList();
+                list.add(new VarInsnNode(ALOAD, 0));
                 list.add(new VarInsnNode(ALOAD, 1));
+                list.add(new VarInsnNode(ALOAD, 2));
                 list.add(new MethodInsnNode(INVOKESTATIC, "com/zfkun/plugins/mymap/PutFilter", "testSetOK", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", false));
-                list.add(new VarInsnNode(ASTORE, 1));
+                // list.add(new VarInsnNode(ASTORE, 1));
                 methodNode.instructions.insert(list);
             }
         }
