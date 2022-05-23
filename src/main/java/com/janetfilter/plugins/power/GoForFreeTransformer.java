@@ -41,6 +41,7 @@ public class GoForFreeTransformer implements MyTransformer {
                 for (int i = 0; i < as.length; i++) {
                     AbstractInsnNode ai = as[i];
                     System.out.println(ai.getOpcode());
+                    System.out.println(ai.toString());
                 }
                 InsnList list = new InsnList();
                 // list.add(new VarInsnNode(ALOAD, 0));
