@@ -32,15 +32,15 @@ public class GoForFreeTransformer implements MyTransformer {
 
         for (MethodNode mn : node.methods) {
             System.out.println(mn.name);
-            System.out.println(mn.desc);
+            //System.out.println(mn.desc);
             if ("decode".equals(mn.name)&& "([B)[B".equals(mn.desc)) {
                 System.out.println("Just ok 11111111111111111111");
-                InsnList list = new InsnList();
-                list.add(new VarInsnNode(ALOAD, 0));
-                list.add(new VarInsnNode(ALOAD, 1));
-                list.add(new MethodInsnNode(INVOKESTATIC, "com/janetfilter/plugins/power/GoForFreeFilter", "testFilter", "([B)[B", false));
-                list.add(new VarInsnNode(ASTORE, 1));
-                mn.instructions.insert(list);
+                // InsnList list = new InsnList();
+                // list.add(new VarInsnNode(ALOAD, 0));
+                // list.add(new VarInsnNode(ALOAD, 1));
+                // list.add(new MethodInsnNode(INVOKESTATIC, "com/janetfilter/plugins/power/GoForFreeFilter", "testFilter", "([B)[B", false));
+                // list.add(new VarInsnNode(ASTORE, 1));
+                //mn.instructions.insert(list);
             }
         }
 
