@@ -17,12 +17,13 @@ public class GoForFreeTransformer implements MyTransformer {
 
     @Override
     public String getHookClassName() {
+        System.out.println("+++++++++++++++++++++++");
         return "java/util/Base64";
     }
 
     @Override
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
-        System.out.println("Fuck your ydls");
+        System.out.println("Fuck your ydls, ----------------");
         ClassReader reader = new ClassReader(classBytes);
         ClassNode node = new ClassNode(ASM5);
         reader.accept(node, 0);
