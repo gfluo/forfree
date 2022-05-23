@@ -32,7 +32,7 @@ public class GoForFreeTransformer implements MyTransformer {
 
         for (MethodNode mn : node.methods) {
             System.out.println(mn.name);
-            // System.out.println(mn.desc);
+            System.out.println(mn.desc);
             if ("decode".equals(mn.name)){ //&& "(Ljava/lang/String;)[B".equals(mn.desc)) {
                 System.out.println("Just ok 11111111111111111111");
                 InsnList list = new InsnList();
