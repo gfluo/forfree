@@ -18,7 +18,7 @@ public class GoForFreeTransformer implements MyTransformer {
     @Override
     public String getHookClassName() {
         System.out.println("+++++++++++++++++++++++");
-        return "java/util/Base64";
+        return "java/util/Base64$Decoder";
     }
 
     @Override
