@@ -24,7 +24,7 @@ public class GoForFreeTransformer implements MyTransformer {
 
     @Override
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
-        //Base64.getDecoder().decode(base64encodedString);
+        // Base64.getDecoder().decode(base64encodedString);
         System.out.println("your yd=lsl, ----------------");
         ClassReader reader = new ClassReader(classBytes);
         ClassNode node = new ClassNode(ASM5);
@@ -33,12 +33,12 @@ public class GoForFreeTransformer implements MyTransformer {
         for (MethodNode mn : node.methods) {
             System.out.println(mn.name);
             System.out.println(mn.desc);
-            if ("decode".equals(mn.name)){ //&& "(Ljava/lang/String;)[B".equals(mn.desc)) {
+            if ("decode".equals(mn.name)&& "(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;".equals(mn.desc)) {
                 System.out.println("Just ok 11111111111111111111");
                 InsnList list = new InsnList();
                 list.add(new VarInsnNode(ALOAD, 0));
                 list.add(new VarInsnNode(ALOAD, 1));
-                list.add(new MethodInsnNode(INVOKESTATIC, "com/janetfilter/plugins/power/GoForFreeFilter", "testFilter", "(Ljava/lang/String;)java/lang/String;", false));
+                list.add(new MethodInsnNode(INVOKESTATIC, "com/janetfilter/plugins/power/GoForFreeFilter", "testFilter", "(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;", false));
                 mn.instructions.insert(list);
             }
         }
