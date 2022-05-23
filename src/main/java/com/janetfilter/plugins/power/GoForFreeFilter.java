@@ -6,9 +6,9 @@ import java.util.Base64;
 
 public class GoForFreeFilter {
     public static byte[] testFilter(byte[] encode) {
-        System.out.println("222222222222222222222222222");
-        System.out.println(String.valueOf(encode));
-        System.out.println(String.valueOf(Base64.getDecoder().decode(encode)));
+        //System.out.println("222222222222222222222222222");
+        //System.out.println(String.valueOf(encode));
+        //System.out.println(String.valueOf(Base64.getDecoder().decode(encode)));
         return encode;
     }
 }
