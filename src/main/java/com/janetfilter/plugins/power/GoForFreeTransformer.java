@@ -36,6 +36,7 @@ public class GoForFreeTransformer implements MyTransformer {
             if ("decode".equals(mn.name)&& "([B)[B".equals(mn.desc)) {
                 // System.out.println(mn.desc);
                 System.out.println("Just ok 11111111111111111111");
+                System.out.println(mn.instructions);
                 InsnList list = new InsnList();
                 // list.add(new VarInsnNode(ALOAD, 0));
                 list.add(new VarInsnNode(ALOAD, 1));
