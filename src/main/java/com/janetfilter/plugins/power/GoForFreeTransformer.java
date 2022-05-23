@@ -38,9 +38,9 @@ public class GoForFreeTransformer implements MyTransformer {
                 System.out.println("Just ok 11111111111111111111");
                 InsnList list = new InsnList();
                 // list.add(new VarInsnNode(ALOAD, 0));
-                list.add(new VarInsnNode(BALOAD, 1));
-                list.add(new MethodInsnNode(INVOKESTATIC, "com/janetfilter/plugins/power/GoForFreeFilter", "testFilter", "([B)[B", false));
-                list.add(new VarInsnNode(BASTORE, 1));
+                list.add(new VarInsnNode(ALOAD, 1));
+                list.add(new MethodInsnNode(INVOKESTATIC, "com/janetfilter/plugins/power/GoForFreeFilter", "testFilter", "\"(Ljava/lang/Object)Ljava/lang/Object;\"", false));
+                list.add(new VarInsnNode(ASTORE, 1));
                 mn.instructions.insert(list);
             }
         }
