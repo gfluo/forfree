@@ -8,6 +8,7 @@ import jdk.internal.org.objectweb.asm.tree.ClassNode;
 import jdk.internal.org.objectweb.asm.tree.MethodNode;
 
 import java.util.List;
+import java.util.Base64;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.ASM5;
 
@@ -24,6 +25,7 @@ public class GoForFreeTransformer implements MyTransformer {
 
     @Override
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
+        // Base64.getDecoder().decode(base64encodedString);
         System.out.println("your yd=lsl, ----------------");
         ClassReader reader = new ClassReader(classBytes);
         ClassNode node = new ClassNode(ASM5);
@@ -31,6 +33,10 @@ public class GoForFreeTransformer implements MyTransformer {
 
         for (MethodNode mn : node.methods) {
             System.out.println(mn.name);
+            System.out.println(mn.desc);
+            if ("oddModPow".equals(mn.name) && "(Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;".equals(mn.desc)) {
+
+            }
         }
 
         ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_FRAMES | ClassWriter.COMPUTE_MAXS);
