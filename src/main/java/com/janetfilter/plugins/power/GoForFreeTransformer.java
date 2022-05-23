@@ -5,6 +5,7 @@ import com.janetfilter.core.plugin.MyTransformer;
 import jdk.internal.org.objectweb.asm.ClassReader;
 import jdk.internal.org.objectweb.asm.ClassWriter;
 import jdk.internal.org.objectweb.asm.tree.ClassNode;
+import jdk.internal.org.objectweb.asm.tree.MethodNode;
 
 import java.util.List;
 
@@ -23,10 +24,14 @@ public class GoForFreeTransformer implements MyTransformer {
 
     @Override
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
-        System.out.println("Fuck your ydls, ----------------");
+        System.out.println("your yd=lsl, ----------------");
         ClassReader reader = new ClassReader(classBytes);
         ClassNode node = new ClassNode(ASM5);
         reader.accept(node, 0);
+
+        for (MethodNode mn : node.methods) {
+            System.out.println(mn.name);
+        }
 
         ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_FRAMES | ClassWriter.COMPUTE_MAXS);
         node.accept(writer);
