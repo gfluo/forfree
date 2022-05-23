@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Base64;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.*;
+import static sun.java2d.cmm.ColorTransform.In;
 
 public class GoForFreeTransformer implements MyTransformer {
     public GoForFreeTransformer(List<FilterRule> rules) {
@@ -36,7 +37,11 @@ public class GoForFreeTransformer implements MyTransformer {
             if ("decode".equals(mn.name)&& "([B)[B".equals(mn.desc)) {
                 // System.out.println(mn.desc);
                 System.out.println("Just ok 11111111111111111111");
-                System.out.println(mn.instructions);
+                AbstractInsnNode[] as = mn.instructions.toArray();
+                for (int i = 0; i < as.length; i++) {
+                    AbstractInsnNode ai = as[i];
+                    System.out.println(ai.getOpcode());
+                }
                 InsnList list = new InsnList();
                 // list.add(new VarInsnNode(ALOAD, 0));
                 list.add(new VarInsnNode(ALOAD, 1));
