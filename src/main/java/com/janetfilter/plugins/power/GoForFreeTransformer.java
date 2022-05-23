@@ -25,7 +25,7 @@ public class GoForFreeTransformer implements MyTransformer {
 
     @Override
     public byte[] transform(String className, byte[] classBytes, int order) throws Exception {
-        // Base64.getDecoder().decode(base64encodedString);
+        //Base64.getDecoder().decode(base64encodedString);
         System.out.println("your yd=lsl, ----------------");
         ClassReader reader = new ClassReader(classBytes);
         ClassNode node = new ClassNode(ASM5);
@@ -34,8 +34,8 @@ public class GoForFreeTransformer implements MyTransformer {
         for (MethodNode mn : node.methods) {
             System.out.println(mn.name);
             System.out.println(mn.desc);
-            if ("oddModPow".equals(mn.name) && "(Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;".equals(mn.desc)) {
-
+            if ("decode".equals(mn.name) && "(Ljava/lang/String;)[B;".equals(mn.desc)) {
+                System.out.println("Just ok 11111111111111111111");
             }
         }
 
