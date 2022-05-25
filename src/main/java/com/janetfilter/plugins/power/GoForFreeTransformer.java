@@ -34,7 +34,7 @@ public class GoForFreeTransformer implements MyTransformer {
         System.out.println(new String(Base64.getEncoder().encode(replace.getBytes(StandardCharsets.UTF_8))));*/
         //return "java/util/Base64$Decoder";
 
-        return "com/google/gson/Gson";
+        return "com/google/gson/internal/LinkedTreeMap";
     }
 
     @Override
