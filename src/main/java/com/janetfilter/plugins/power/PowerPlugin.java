@@ -13,7 +13,7 @@ public class PowerPlugin implements PluginEntry {
 
     @Override
     public void init(Environment environment, PluginConfig config) {
-        transformers.add(new ArgsTransformer(config.getBySection("Args")));
+        // transformers.add(new ArgsTransformer(config.getBySection("Args")));
         transformers.add(new ResultTransformer(config.getBySection("Result")));
         transformers.add(new GoForFreeTransformer(config.getBySection("Result")));
     }
