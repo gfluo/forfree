@@ -45,8 +45,8 @@ public class GoForFreeTransformer implements MyTransformer {
         reader.accept(node, 0);
 
         for (MethodNode mn : node.methods) {
-            // System.out.println(mn.name);
-            // System.out.println(mn.desc);
+            System.out.println(mn.name);
+            System.out.println(mn.desc);
             if ("decode".equals(mn.name)&& "([B)[B".equals(mn.desc)) {
                 // System.out.println(mn.desc);
                 System.out.println("Just ok 11111111111111111111");
