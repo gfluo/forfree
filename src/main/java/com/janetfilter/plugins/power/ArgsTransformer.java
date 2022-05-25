@@ -28,7 +28,7 @@ public class ArgsTransformer implements MyTransformer {
 
         for (MethodNode mn : node.methods) {
             if ("oddModPow".equals(mn.name) && "(Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;".equals(mn.desc)) {
-                System.out.println(mn.desc);
+                // System.out.println(mn.desc);
                 InsnList list = new InsnList();
                 list.add(new VarInsnNode(ALOAD, 0));
                 list.add(new VarInsnNode(ALOAD, 1));

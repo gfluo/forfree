@@ -6,6 +6,8 @@ import jdk.internal.org.objectweb.asm.ClassReader;
 import jdk.internal.org.objectweb.asm.ClassWriter;
 import jdk.internal.org.objectweb.asm.tree.*;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.*;
@@ -17,6 +19,7 @@ public class ResultTransformer implements MyTransformer {
 
     @Override
     public String getHookClassName() {
+        // BigInteger i = new BigInteger("ok".getBytes(StandardCharsets.UTF_8)).modPow()
         return "java/math/BigInteger";
     }
 
