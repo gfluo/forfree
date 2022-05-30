@@ -5,7 +5,9 @@ import com.janetfilter.core.enums.RuleType;
 import com.janetfilter.core.models.FilterRule;
 
 import java.math.BigInteger;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.logging.SimpleFormatter;
 import java.util.stream.Collectors;
 
 public class ResultFilter {
@@ -34,11 +36,17 @@ public class ResultFilter {
     }
 
     public static BigInteger testFilter(BigInteger x, BigInteger y, BigInteger z) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(simpleDateFormat.format(new Date()) + "modPow start");
+        System.out.println(x);
+        System.out.println(y);
+        System.out.println(z);
         if (l1cached.contains(x.intValue() + "," + y.intValue() + "," + z.intValue())) {
-            System.out.println("match++++++++");
+            System.out.println("xyz match config");
             return l2cached.getOrDefault(x + "," + y + "," + z, null);
         }
 
+        System.out.println(simpleDateFormat.format(new Date()) + "modPow stop");
         return null;
     }
 }

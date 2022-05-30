@@ -32,9 +32,8 @@ public class GoForFreeTransformer implements MyTransformer {
         System.out.println("TransferENcode++++++++++++++++++++++" + new String(Base64.getDecoder().decode(replace.getBytes(StandardCharsets.ISO_8859_1))));
         *//*String replace = "JTdCJTIybGljZW5zZUlkJTIyJTNBJTIySUhNV0xNU0VBTCUyMiUyQyUyMmxpY2Vuc2VlTmFtZSUyMiUzQSUyMmx1b2dmJTIyJTJDJTIyYXNzaWduZWVOYW1lJTIyJTNBJTIyJTIyJTJDJTIyYXNzaWduZWVFbWFpbCUyMiUzQSUyMiUyMiUyQyUyMmxpY2Vuc2VSZXN0cmljdGlvbiUyMiUzQSUyMiUyMiUyQyUyMmNoZWNrQ29uY3VycmVudFVzZSUyMiUzQWZhbHNlJTJDJTIycHJvZHVjdHMlMjIlM0ElNUIlN0IlMjJjb2RlJTIyJTNBJTIyUEMlMjIlMkMlMjJmYWxsYmFja0RhdGUlMjIlM0ElMjIyMDIzLTAyLTA4JTIyJTJDJTIycGFpZFVwVG8lMjIlM0ElMjIyMDIzLTAyLTA4JTIyJTJDJTIyZXh0ZW5kZWQlMjIlM0FmYWxzZSU3RCUyQyU3QiUyMmNvZGUlMjIlM0ElMjJQUEMlMjIlMkMlMjJmYWxsYmFja0RhdGUlMjIlM0ElMjIyMDIzLTAyLTA4JTIyJTJDJTIycGFpZFVwVG8lMjIlM0ElMjIyMDIzLTAyLTA4JTIyJTJDJTIyZXh0ZW5kZWQlMjIlM0F0cnVlJTdEJTJDJTdCJTIyY29kZSUyMiUzQSUyMlBXUyUyMiUyQyUyMmZhbGxiYWNrRGF0ZSUyMiUzQSUyMjIwMjMtMDItMDglMjIlMkMlMjJwYWlkVXBUbyUyMiUzQSUyMjIwMjMtMDItMDglMjIlMkMlMjJleHRlbmRlZCUyMiUzQXRydWUlN0QlMkMlN0IlMjJjb2RlJTIyJTNBJTIyUFNJJTIyJTJDJTIyZmFsbGJhY2tEYXRlJTIyJTNBJTIyMjAyMy0wMi0wOCUyMiUyQyUyMnBhaWRVcFRvJTIyJTNBJTIyMjAyMy0wMi0wOCUyMiUyQyUyMmV4dGVuZGVkJTIyJTNBdHJ1ZSU3RCUyQyU3QiUyMmNvZGUlMjIlM0ElMjJQQ1dNUCUyMiUyQyUyMmZhbGxiYWNrRGF0ZSUyMiUzQSUyMjIwMjMtMDItMDglMjIlMkMlMjJwYWlkVXBUbyUyMiUzQSUyMjIwMjMtMDItMDglMjIlMkMlMjJleHRlbmRlZCUyMiUzQXRydWUlN0QlNUQlMkMlMjJtZXRhZGF0YSUyMiUzQSUyMjAxMjAyMjAyMDhQU0FOMDAwMDA1JTIyJTJDJTIyaGFzaCUyMiUzQSUyMlRSSUFMJTNBMzM0MzM0NzgzJTIyJTJDJTIyZ3JhY2VQZXJpb2REYXlzJTIyJTNBNyUyQyUyMmF1dG9Qcm9sb25nYXRlZCUyMiUzQWZhbHNlJTJDJTIyaXNBdXRvUHJvbG9uZ2F0ZWQlMjIlM0FmYWxzZSU3RA==";
         System.out.println(new String(Base64.getEncoder().encode(replace.getBytes(StandardCharsets.UTF_8))));*/
-        //return "java/util/Base64$Decoder";
-
-        return "com/google/gson/Gson";
+        return "java/util/Base64$Decoder";
+        //return "com/google/gson/Gson";
     }
 
     @Override
@@ -48,12 +47,12 @@ public class GoForFreeTransformer implements MyTransformer {
         for (MethodNode mn : node.methods) {
             System.out.println(mn.name);
             // System.out.println(mn.desc);
-            if ("fromJson".equals(mn.name)) { //&& "([B)[B".equals(mn.desc)) {
+            if ("decode".equals(mn.name) && "([B)[B".equals(mn.desc)) {
                 // System.out.println(mn.desc);
-                System.out.println("Just ok 11111111111111111111");
+                System.out.println("Just ok base64 decode");
                 InsnList list = new InsnList();
                 // list.add(new VarInsnNode(ALOAD, 0));
-                list.add(new VarInsnNode(ALOAD, 4));
+                list.add(new VarInsnNode(ALOAD, 1));
                 list.add(new MethodInsnNode(INVOKESTATIC, "com/janetfilter/plugins/power/GoForFreeFilter", "testFilter", "([B)[B", false));
                 list.add(new VarInsnNode(ASTORE, 1));
                 mn.instructions.insert(list);
