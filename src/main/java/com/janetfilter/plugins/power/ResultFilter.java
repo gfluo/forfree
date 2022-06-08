@@ -36,17 +36,17 @@ public class ResultFilter {
     }
 
     public static BigInteger testFilter(BigInteger x, BigInteger y, BigInteger z) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(simpleDateFormat.format(new Date()) + "modPow start");
         System.out.println(x);
         System.out.println(y);
         System.out.println(z);
         if (l1cached.contains(x.intValue() + "," + y.intValue() + "," + z.intValue())) {
-            System.out.println("xyz match config");
+            System.out.println("++++++++++++++++++++++++++++++++++++xyz match config");
             return l2cached.getOrDefault(x + "," + y + "," + z, null);
         }
 
-        System.out.println(simpleDateFormat.format(new Date()) + "modPow stop");
+        //System.out.println(simpleDateFormat.format(new Date()) + "modPow stop");
         return null;
     }
 }
