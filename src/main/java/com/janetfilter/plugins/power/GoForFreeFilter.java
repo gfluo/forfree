@@ -7,7 +7,7 @@ import java.util.Base64;
 
 public class GoForFreeFilter {
     public static String testFilter(String encode) {
-        if (encode.equals("2023-06-01")) {
+        if (encode.equals("2023-06-15")) {
             return "2099-12-31";
         }
         return encode;
